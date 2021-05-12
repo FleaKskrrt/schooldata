@@ -19,13 +19,11 @@ connect();
   <body>
     <form id="form1">
    <div class="divTable">
-          <div class="headRow1">
-        </div>
-             <div  class="divCell">Firstname</div>
+             <div class="divCell">Firstname</div>
              <div  class="divCell">Lastname</div>
              <div  class="divCell">Class</div>
-          </div>
-                                                            </div>
+    </div>
+    <div class=data>
     <?php for($i = 0; $i < count(getijoin()); $i++) { ?>
             <div class="cell1">
                 <?php echo getijoin()[$i]['firstname'];?>
@@ -38,7 +36,7 @@ connect();
             </div>
           <?php } ?>
 
-
+      </div>
   </form>
 
     <?php
