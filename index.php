@@ -14,8 +14,31 @@ connect();
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <form id="form1">
+   <div class="divTable">
+          <div class="headRow">
+             <div class="divCell" align="center">Firstname</div>
+             <div  class="divCell">Lastname</div>
+             <div  class="divCell">Class</div>
+          </div>
+    <?php for($i = 0; $i < count(getijoin()); $i++) { ?>
+            <div class="cell1">
+                <?php echo getijoin()[$i]['firstname'];?>
+            </div>
+            <div class="cell2">
+                <?php echo getijoin()[$i]['surname'];?>
+            </div>
+            <div class="cell3">
+                <?php echo getijoin()[$i]['class_name'];?>
+            </div>
+          <?php } ?>
+
+      </div>
+  </form>
+
     <?php
     $age = 25;
     for($i = 0; $i < count(getstudent('1')); $i++) {
@@ -24,8 +47,7 @@ connect();
       }
 
 
-      $ijoin = '';
-      debug(getijoin($ijoin));
+      debug(getijoin());
       ?>
   </body>
 </html>

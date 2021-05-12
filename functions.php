@@ -26,7 +26,7 @@ function getstudent($students) {
     }
 
 
-    function getijoin($ijoin) {
+    function getijoin() {
       global $conn;
       $sql = 'SELECT students.firstname, students.surname, classes.class_name
       FROM students INNER JOIN classes

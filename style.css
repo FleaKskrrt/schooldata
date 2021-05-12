@@ -1,0 +1,22 @@
+
+.divTable{
+	display: table;
+	width: 100%;
+}
+.headRow {
+  display: table;
+
+}
+
+.divCell {
+display: table-cell;
+}
+.cell {
+
+display: table-row;
+}
+
+.cell2 {
+
+display: table-row;
+}
