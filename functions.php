@@ -14,7 +14,7 @@ function connect() { //connect to DB
 
 function getstudent($students) {
     global $conn;
-    $sql = 'SELECT firstname FROM students where age  > "'. $students .'"';
+    $sql = 'SELECT firstname FROM students where class  = "'. $students .'"';
     $result = mysqli_query($conn, $sql);
     $students = [];
     if(mysqli_num_rows($result)>0){
@@ -25,13 +25,26 @@ function getstudent($students) {
     return $students;
     }
 
-  function getclasses($classes) {
-    global $conn;
-    $sql = 'SELECT class_name FROM classes where class_id ="'. $classes .'"';
-  }
+
+    function getijoin($ijoin) {
+      global $conn;
+      $sql = 'SELECT students.firstname, students.surname, classes.class_name
+      FROM students INNER JOIN classes
+      ON classes.class_name = students.class';
+      $result = mysqli_query($conn, $sql);
+      $ijoin = [];
+      if(mysqli_num_rows($result)>0){
+          while($row = mysqli_fetch_assoc($result)) {
+              $ijoin[] = $row;
+          }
+      }
+      return $ijoin;
+    }
+
+
 
     function debug($data) {
-        echo '<pre>';
-        print_r($data);
-        echo '</pre>';
+      echo '<pre>';
+      print_r($data);
+      echo '</pre>';
     }
