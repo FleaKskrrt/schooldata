@@ -30,7 +30,7 @@ function getstudent($students) {
       global $conn;
       $sql = 'SELECT students.firstname, students.surname, classes.class_name
       FROM students INNER JOIN classes
-      ON classes.class_name = students.class';
+      ON classes.class_id = students.class';
       $result = mysqli_query($conn, $sql);
       $ijoin = [];
       if(mysqli_num_rows($result)>0){

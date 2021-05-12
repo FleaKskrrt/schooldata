@@ -18,9 +18,9 @@ connect();
   <body>
     <?php
     $age = 25;
-    for($i = 0; $i < count(getstudent('IT')); $i++) {
-    echo getstudent('IT')[$i]["firstname"];
-      debug(getstudent('IT')[$i]);
+    for($i = 0; $i < count(getstudent('1')); $i++) {
+    echo getstudent('1')[$i]["firstname"];
+      debug(getstudent('1')[$i]);
       }
 
 
