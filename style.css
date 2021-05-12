@@ -1,22 +1,36 @@
 
 .divTable{
 	display: table;
-	width: 100%;
+	width: 10%;
 }
 .headRow {
-  display: table;
-
+  display: flex;
+	margin-left: 20px;
 }
 
 .divCell {
 display: table-cell;
 }
-.cell {
 
-display: table-row;
+.cell1 {
+	display: flex;
+	margin-left: 40px;
+	float: left;
+	display: table-cell;
+	background-color: red;
 }
 
 .cell2 {
+	display: flex;
+	width: auto;
+	float: inherit;
+	display: table-cell;
+background-color: blue;
+}
 
-display: table-row;
+.cell3 {
+	display: flex;
+	width: auto;
+	display: table-cell;
+	background-color: green;
 }
