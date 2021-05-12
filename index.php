@@ -17,18 +17,17 @@ connect();
   </head>
   <body>
     <?php
-      $sql = "SELECT * FROM students;";
-      $result = mysqli_query($conn, $sql);
-      $resultCheck = mysqli_num_rows($result);
-
-      if ($result > 0) {
-        while ($row = mysqli_fetch_assoc($result)) {
-          echo $row['studentid'] . "<br>";
-          }
+    $age = 25;
+    for($i = 0; $i < count(getstudent($age)); $i++) {
+    echo getstudent($age)[$i]["firstname"];
+      debug(getstudent($age)[$i]);
       }
-
-
-
-     ?>
+      //for($i = 0; $i < count(getclasses('2')); $i++) {
+      //echo getstudent('2')[$i]["class_id"];
+      //  debug(getstudent('2')[$i]);
+      echo getclasses('2')["class_id"]; {
+        debug(getclasses('2')["class_id"]);
+      }
+      ?>
   </body>
 </html>

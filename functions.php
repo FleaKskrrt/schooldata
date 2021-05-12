@@ -10,3 +10,28 @@ function connect() { //connect to DB
     }
     mysqli_select_db($conn, DBNAME); //select DB that's to be used
 }
+
+
+function getstudent($students) {
+    global $conn;
+    $sql = 'SELECT firstname FROM students where age  > "'. $students .'"';
+    $result = mysqli_query($conn, $sql);
+    $students = [];
+    if(mysqli_num_rows($result)>0){
+        while($row = mysqli_fetch_assoc($result)) {
+            $students[] = $row;
+        }
+    }
+    return $students;
+    }
+
+  function getclasses($classes) {
+    global $conn;
+    $sql = 'SELECT class_name FROM classes where class_id ="'. $classes .'"';
+  }
+
+    function debug($data) {
+        echo '<pre>';
+        print_r($data);
+        echo '</pre>';
+    }
