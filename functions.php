@@ -14,7 +14,7 @@ function connect() { //connect to DB
 
 function getstudent($students) {
     global $conn;
-    $sql = 'SELECT firstname FROM students where class  = "'. $students .'"';
+    $sql = 'SELECT firstname FROM students where class_id  = "'. $students .'"';
     $result = mysqli_query($conn, $sql);
     $students = [];
     if(mysqli_num_rows($result)>0){
@@ -30,7 +30,7 @@ function getstudent($students) {
       global $conn;
       $sql = 'SELECT students.firstname, students.surname, classes.class_name
       FROM students INNER JOIN classes
-      ON classes.class_id = students.class';
+      ON classes.class_id = students.class_id';
       $result = mysqli_query($conn, $sql);
       $ijoin = [];
       if(mysqli_num_rows($result)>0){
